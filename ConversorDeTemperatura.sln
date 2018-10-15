@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversorDeTemperatura", "ConversorDeTemperatura\ConversorDeTemperatura.csproj", "{8E5A2F68-FD5D-45EC-A899-19A661A01CE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{FF7FCE49-69C1-4CD8-90D1-0E1BD92E58D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FDE95C91-5439-47E5-B6EC-7358F677AC22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8842EF39-3163-43DF-9086-18174E3816F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +24,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E5A2F68-FD5D-45EC-A899-19A661A01CE3} = {FF7FCE49-69C1-4CD8-90D1-0E1BD92E58D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D683DEE7-6592-4180-AC5B-7CBF81FD6B28}
