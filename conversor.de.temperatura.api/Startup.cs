@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConversorDeTemperatura
+namespace conversor.de.temperatura.api
 {
     public class Startup
     {
