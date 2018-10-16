@@ -15,15 +15,15 @@ namespace conversor.de.temperatura.test
         public void ConvertendoCelsiusParaFahrenheit()
         {
             double celsius = 0;
-            double fahrenheit = 32;
+            double resultadoEsperado = 32;
 
             var converter = new ConverterTemperaturas();
 
-            var resultado = converter.CelsiusParaFahrenheit(celsius);
+            var resultadoObtido = converter.CelsiusParaFahrenheit(celsius);
 
-            string mensagem = $"Erro na conversão de {celsius}°C para fahrenheit. \nEsperado = {fahrenheit}°F \nObtido = {resultado}°F";
+            string mensagem = $"Erro na conversão de {celsius}°C para fahrenheit. \nEsperado = {resultadoEsperado}°F \nObtido = {resultadoObtido}°F";
 
-            Assert.That(resultado, Is.EqualTo(fahrenheit), mensagem);
+            Assert.That(resultadoObtido, Is.EqualTo(resultadoEsperado), mensagem);
         }
 
     }
