@@ -21,10 +21,9 @@ namespace conversor.de.temperatura.test
 
             var resultadoObtido = converter.CelsiusParaFahrenheit(celsius);
 
-            string mensagem = $"Erro na conversão de {celsius}°C para fahrenheit. \nEsperado = {resultadoEsperado}°F \nObtido = {resultadoObtido}°F";
+            string mensagem = $"Erro na conversão de { celsius }°C para fahrenheit. \nEsperado = { resultadoEsperado }°F \nObtido = { resultadoObtido }°F";
 
             Assert.That(resultadoObtido, Is.EqualTo(resultadoEsperado), mensagem);
         }
-
     }
 }

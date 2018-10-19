@@ -23,7 +23,7 @@ namespace conversor.de.temperatura.api.Controllers
             return string.Empty;
         }
 
-        [HttpGet("ConverterTemperaturas/ParaFahrenheit/{celsius}")]
+        [HttpGet("ConverterTemperaturas/{celsius}/ParaFahrenheit")]
         public decimal ParaFahrenheit(decimal celsius)
         {
             return converter.CelsiusParaFahrenheit(celsius);

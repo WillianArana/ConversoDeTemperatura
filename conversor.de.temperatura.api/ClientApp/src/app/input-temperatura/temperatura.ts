@@ -1,7 +1,7 @@
-export class temperatura{
+export class Temperatura{
 
-    constructor(
-    public celsius : number,
-    public fahrenheit : number
-    ){}
+    public celsius: number;
+    public fahrenheit: number;
+
+    constructor(){}
 }
