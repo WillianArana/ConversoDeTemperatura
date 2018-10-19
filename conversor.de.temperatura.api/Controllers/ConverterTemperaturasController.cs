@@ -11,7 +11,7 @@ namespace conversor.de.temperatura.api.Controllers
 {
     public class ConverterTemperaturasController : Controller
     {
-        readonly ConverterTemperaturas converter;
+        private readonly ConverterTemperaturas converter;
         public ConverterTemperaturasController()
         {
             converter = new ConverterTemperaturas();
@@ -20,10 +20,9 @@ namespace conversor.de.temperatura.api.Controllers
         // GET: /ConverterTemperaturas/
         public string Index()
         {
-            return "This is my default action...";
+            return string.Empty;
         }
 
-        //  GET: /ConverterTemperaturas/{celsius}
         [HttpGet("ConverterTemperaturas/ParaFahrenheit/{celsius}")]
         public decimal ParaFahrenheit(decimal celsius)
         {

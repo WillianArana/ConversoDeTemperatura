@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace conversor.de.temperatura.bussines
 {
-    public class ConverterTemperaturas
+    public class ConverterTemperaturas : IConverterTemperaturas
     {
         public decimal CelsiusParaFahrenheit(decimal celsius)
         {

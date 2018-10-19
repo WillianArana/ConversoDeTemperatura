@@ -1,16 +1,15 @@
-<form form #f="ngForm" (ngSubmit)="onSubmit(f)"  class="container">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="container">
   <div class="row">
     <div class="col">
       <div class="input-group mb-1">
         <div class="input-group-append form-group">
-          <input required #celsius="ngModel" type="number" class="form-control" id="celsius" placeholder="Celsius" name="celsius"
-              [(ngModel)]="temperatura.celsius">
+          <input required type="number" #celsius="ngModel" [ngModel]="temperatura.celsius" id="celsius" placeholder="Celsius" name="celsius">
           <button class="btn btn-primary" type="submit">Converter</button>
         </div>
       </div>
       <br>
-      <b *ngIf="_celsius != _fahrenheit" >
-        {{ _celsius }} ºC equivale a {{ _fahrenheit }} ºF</b>
+      <b *ngIf=" temperatura.celsius != temperatura.fahrenheit" >
+        {{ temperatura.celsius }} ºC equivale a {{ temperatura.fahrenheit }} ºF</b>
       <br>
       <p></p>
     </div>
