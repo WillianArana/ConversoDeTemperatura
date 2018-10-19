@@ -8,9 +8,9 @@ namespace conversor.de.temperatura.bussines
 {
     public class ConverterTemperaturas
     {
-        public double CelsiusParaFahrenheit(double celsius)
+        public decimal CelsiusParaFahrenheit(decimal celsius)
         {
-            double fahrenheit = (celsius * 1.8) + 32;
+            decimal fahrenheit = (celsius * 1.8m) + 32;
             return fahrenheit;
         }
     }

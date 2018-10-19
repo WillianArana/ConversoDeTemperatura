@@ -14,8 +14,8 @@ namespace conversor.de.temperatura.test
         [Test]
         public void ConvertendoCelsiusParaFahrenheit()
         {
-            double celsius = 0;
-            double resultadoEsperado = 32;
+            var celsius = 0m;
+            var resultadoEsperado = 32m;
 
             var converter = new ConverterTemperaturas();
 

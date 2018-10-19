@@ -1,16 +1,18 @@
-<div class="container">
+<form form #f="ngForm" (ngSubmit)="onSubmit(f)"  class="container">
   <div class="row">
     <div class="col">
       <div class="input-group mb-1">
-        <div class="input-group-append">
-          <input [(ngModel)]="celsius" type="number" placeholder="" aria-label="Tempreratura" aria-describedby="basic-addon2">
-          <button class="btn btn-outline-secondary" type="submit">Converter</button>
+        <div class="input-group-append form-group">
+          <input required #celsius="ngModel" type="number" class="form-control" id="celsius" placeholder="Celsius" name="celsius"
+              [(ngModel)]="temperatura.celsius">
+          <button class="btn btn-primary" type="submit">Converter</button>
         </div>
       </div>
       <br>
-      <p>{{ celsius }} ºC equivale a {{ fahrenheit }} ºF</p>
+      <p *ngIf=" temperatura.fahrenheit !== '' " >
+        {{ temperatura.celsius }} ºC equivale a {{ temperatura.fahrenheit }} ºF</p>
       <br>
       <p></p>
     </div>
   </div>
-</div>
+</form>

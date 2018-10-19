@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 import { map, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
@@ -10,23 +11,28 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 })
 export class InputTemperaturaComponent implements OnInit {
 
-  celsius: number;
-  fahrenheit: number;
+  temperatura: any = {
+    celsius: '',
+    fahrenheit: ''
+  }
+
+  private readonly url: string = 'https://localhost:44319/ConverterTemperaturas';
 
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.celsius = 0;
   }
 
   onSubmit(formulario) {
 
-    this.http.post('https://httpbin.org/post', JSON.stringify(formulario.value))
+    console.log(formulario );
+
+    this.http.get( this.url + `/ParaFahrenheit/${ this.temperatura.celsius }`, JSON.stringify(formulario.value))
     .pipe(map(res => res))
     .subscribe(
       dados => 
       {
-        console.log(dados);
+        this.temperatura.fahrenheit = dados['_body'];
        });
 
   }
