@@ -16,25 +16,28 @@ export class InputTemperaturaComponent implements OnInit {
     fahrenheit: ''
   }
 
-  private readonly url: string = 'https://localhost:44319/ConverterTemperaturas';
+  _celsius: number;
+  _fahrenheit: number;
 
-  constructor(private http: Http) { }
+  private readonly url: string = 'http://localhost:52694/ConverterTemperaturas';
+
+  constructor( private http: Http ) { }
 
   ngOnInit() {
+    this._celsius = 0;
+    this._fahrenheit = 0;
   }
 
   onSubmit(formulario) {
-
-    console.log(formulario );
-
-    this.http.get( this.url + `/ParaFahrenheit/${ this.temperatura.celsius }`, JSON.stringify(formulario.value))
+    const url: string = this.url + `/ParaFahrenheit/${ this.temperatura.celsius }`;
+    this.http.get(url, JSON.stringify(formulario.value))
     .pipe(map(res => res))
     .subscribe(
       dados => 
       {
-        this.temperatura.fahrenheit = dados['_body'];
+        this._celsius = this.temperatura.celsius;
+        this._fahrenheit = dados['_body'];
        });
-
   }
 
 }

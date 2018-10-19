@@ -9,8 +9,8 @@
         </div>
       </div>
       <br>
-      <p *ngIf=" temperatura.fahrenheit !== '' " >
-        {{ temperatura.celsius }} ºC equivale a {{ temperatura.fahrenheit }} ºF</p>
+      <b *ngIf="_celsius != _fahrenheit" >
+        {{ _celsius }} ºC equivale a {{ _fahrenheit }} ºF</b>
       <br>
       <p></p>
     </div>
