@@ -26,12 +26,17 @@ export class InputTemperaturaComponent implements OnInit {
   }
 
   onSubmit(form) {
-    const celsius = form.value.celsius;
+    var celsius = form.value.celsius;
+    this.ObterFahrenheit(celsius);
+  }
+
+  private ObterFahrenheit(celsius: number)
+  {
     const hrefConverterParaFahrenheit = `${this.hrefConverterTemp}/${celsius}/ParaFahrenheit`;
     this.http.get(hrefConverterParaFahrenheit).pipe(map(res => res))
              .subscribe(
                  dados => {
-                   this.temperatura.celsius = form.value.celsius;
+                   this.temperatura.celsius = celsius;
                    this.temperatura.fahrenheit = dados['_body'];
                  });
   }

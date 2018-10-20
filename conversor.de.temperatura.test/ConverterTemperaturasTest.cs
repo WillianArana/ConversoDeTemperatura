@@ -12,7 +12,7 @@ namespace conversor.de.temperatura.test
     public class ConverterTemperaturasTest
     {
         [Test]
-        public void ConvertendoCelsiusParaFahrenheit()
+        public void DeveConverterCelsiusParaFahrenheit()
         {
             var celsius = 0m;
             var resultadoEsperado = 32m;
