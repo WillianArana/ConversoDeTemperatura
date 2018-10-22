@@ -3,13 +3,13 @@
     <div class="col">
       <div class="input-group mb-1">
         <div class="input-group-append form-group">
-          <input required type="number" #celsius="ngModel" [ngModel]="temperatura.celsius" id="celsius" placeholder="Celsius" name="celsius">
+          <input required type="number" #celsius="ngModel" [ngModel]="temperatura.celsius" id="CelsiusIdInput" placeholder="Celsius" name="celsius">
           <button class="btn btn-primary" type="submit">Converter</button>
         </div>
       </div>
       <br>
       <b *ngIf="temperatura.celsius != temperatura.fahrenheit" >
-        {{ temperatura.celsius }} ºC equivale a {{ temperatura.fahrenheit }} ºF</b>
+       <span id="CelsiusIdSpan" >{{ temperatura.celsius }}</span>ºC equivale a <span id="FahrenheitIdSpan">{{ temperatura.fahrenheit }}</span>ºF</b>
       <br>
       <p></p>
     </div>
