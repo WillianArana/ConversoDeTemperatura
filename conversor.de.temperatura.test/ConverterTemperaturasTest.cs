@@ -25,5 +25,20 @@ namespace conversor.de.temperatura.test
 
             Assert.That(resultadoObtido, Is.EqualTo(resultadoEsperado), mensagem);
         }
+
+        [Test]
+        public void DeveConverterCelsiusParaKelvin()
+        {
+            var celsius = 0m;
+            var resultadoEsperado = 273.15m;
+
+            var converter = new ConverterTemperaturas();
+
+            var resultadoObtido = converter.CelsiusParaKelvin(celsius);
+
+            string mensagem = $"Erro na conversão de { celsius }°C para kelvin. \nEsperado = { resultadoEsperado }K \nObtido = { resultadoObtido } K";
+
+            Assert.That(resultadoObtido, Is.EqualTo(resultadoEsperado), mensagem);
+        }
     }
 }

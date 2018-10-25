@@ -13,5 +13,11 @@ namespace conversor.de.temperatura.bussines
             decimal fahrenheit = (celsius * 1.8m) + 32;
             return fahrenheit;
         }
+
+        public decimal CelsiusParaKelvin(decimal celsius)
+        {
+            decimal kelvin = celsius + 273.15m;
+            return kelvin;
+        }
     }
 }

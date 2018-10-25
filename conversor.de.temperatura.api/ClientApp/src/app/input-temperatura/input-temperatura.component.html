@@ -1,17 +1,22 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="container">
   <div class="row">
-    <div class="col">
-      <div class="input-group mb-1">
-        <div class="input-group-append form-group">
-          <input required type="number" #celsius="ngModel" [ngModel]="temperatura.celsius" id="CelsiusIdInput" placeholder="Celsius" name="celsius">
-          <button class="btn btn-primary" type="submit">Converter</button>
-        </div>
+      <div class="col">
+          <div class="input-group mb-1">
+              <div class="input-group-append form-group">
+                  <input required type="number" #celsius="ngModel" [ngModel]="temperatura.celsius" id="CelsiusIdInput" placeholder="Celsius" name="celsius">
+                  <button class="btn btn-primary" type="submit">Converter</button>
+              </div>
+          </div>
+          <br>
+          <b *ngIf="temperatura.celsius != temperatura.fahrenheit">
+              <span id="CelsiusIdSpan">{{ temperatura.celsius }}</span>ºC equivale a <span id="FahrenheitIdSpan">{{ temperatura.fahrenheit }}</span>ºF
+          </b>
+          <br>
+          <b *ngIf="temperatura.celsius != temperatura.kelvin">
+              <span >{{ temperatura.celsius }}</span>ºC equivale a <span id="KelvinIdSpan">{{ temperatura.kelvin }}</span>K
+          </b>
+          <br>
+          <p></p>
       </div>
-      <br>
-      <b *ngIf="temperatura.celsius != temperatura.fahrenheit" >
-       <span id="CelsiusIdSpan" >{{ temperatura.celsius }}</span>ºC equivale a <span id="FahrenheitIdSpan">{{ temperatura.fahrenheit }}</span>ºF</b>
-      <br>
-      <p></p>
-    </div>
   </div>
 </form>

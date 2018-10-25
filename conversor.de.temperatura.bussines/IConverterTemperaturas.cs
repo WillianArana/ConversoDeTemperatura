@@ -9,5 +9,6 @@ namespace conversor.de.temperatura.bussines
     public interface IConverterTemperaturas
     {
         decimal CelsiusParaFahrenheit(decimal celsius);
+        decimal CelsiusParaKelvin(decimal celsius);
     }
 }

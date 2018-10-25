@@ -28,5 +28,11 @@ namespace conversor.de.temperatura.api.Controllers
         {
             return converter.CelsiusParaFahrenheit(celsius);
         }
+
+        [HttpGet("ConverterTemperaturas/{celsius}/ParaKelvin")]
+        public decimal ParaKelvin(decimal celsius)
+        {
+            return converter.CelsiusParaKelvin(celsius);
+        }
     }
 }

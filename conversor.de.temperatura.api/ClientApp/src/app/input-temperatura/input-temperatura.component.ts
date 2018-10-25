@@ -6,39 +6,49 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 import { Temperatura } from './Temperatura';
 
 @Component({
-  selector: 'app-input-temperatura',
-  templateUrl: './input-temperatura.component.html',
-  styleUrls: ['./input-temperatura.component.css']
+    selector: 'app-input-temperatura',
+    templateUrl: './input-temperatura.component.html',
+    styleUrls: ['./input-temperatura.component.css']
 })
 export class InputTemperaturaComponent implements OnInit {
 
-  temperatura: Temperatura;
+    temperatura: Temperatura;
 
-  private readonly hrefConverterTemp: string;
+    private readonly hrefConverterTemp: string;
 
-  constructor(private http: Http) {
-    let href = window.location.href;
-    this.hrefConverterTemp = href + "ConverterTemperaturas";
-  }
+    constructor(private http: Http) {
+        let href = window.location.href;
+        this.hrefConverterTemp = href + "ConverterTemperaturas";
+    }
 
-  ngOnInit() {
-    this.temperatura = new Temperatura();
-  }
+    ngOnInit() {
+        this.temperatura = new Temperatura();
+    }
 
-  onSubmit(form) {
-    var celsius = form.value.celsius;
-    this.ObterFahrenheit(celsius);
-  }
+    onSubmit(form) {
+        var celsius = form.value.celsius;
+        this.ObterFahrenheit(celsius);
+        this.ObterKelvin(celsius);
+    }
 
-  private ObterFahrenheit(celsius: number)
-  {
-    const hrefConverterParaFahrenheit = `${this.hrefConverterTemp}/${celsius}/ParaFahrenheit`;
-    this.http.get(hrefConverterParaFahrenheit).pipe(map(res => res))
-             .subscribe(
-                 dados => {
-                   this.temperatura.celsius = celsius;
-                   this.temperatura.fahrenheit = dados['_body'];
-                 });
-  }
+    private ObterFahrenheit(celsius: number) {
+        const hrefConverterParaFahrenheit = `${this.hrefConverterTemp}/${celsius}/ParaFahrenheit`;
+        this.http.get(hrefConverterParaFahrenheit).pipe(map(res => res))
+            .subscribe(
+                dados => {
+                    this.temperatura.celsius = celsius;
+                    this.temperatura.fahrenheit = dados['_body'];
+                });
+    }
+
+    private ObterKelvin(celsius: number) {
+        const hrefConverterParaKelvin = `${this.hrefConverterTemp}/${celsius}/ParaKelvin`;
+        this.http.get(hrefConverterParaKelvin).pipe(map(res => res))
+            .subscribe(
+                dados => {
+                    this.temperatura.celsius = celsius;
+                    this.temperatura.kelvin = dados['_body'];
+                });
+    }
 
 }
